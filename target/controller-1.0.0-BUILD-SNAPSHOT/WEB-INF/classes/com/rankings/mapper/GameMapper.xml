@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.rankings.mapper.GameMapper">
+ 	<select id="read" resultType="com.rankings.mapper.GameVO">
+ 		select * from game where game.game_id = #{game_id}
+ 	</select>
+ 	<select id="readList" resultType="com.rankings.mapper.GameVO">
+ 		<![CDATA[select * from game]]>
+ 	</select>
+ </mapper>

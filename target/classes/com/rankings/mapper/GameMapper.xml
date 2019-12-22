@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.rankings.mapper.GameMapper">
+  	<select id="onlineGame" resultType="com.rankings.domain.GameVO">
+ 		select * from game where game_id = #{game_id}
+ 	</select>
+   	<select id="onlineGameList" resultType="com.rankings.domain.GameVO">
+ 		<![CDATA[select * from game where game_division = 'online' order by game_rank]]>
+ 	</select>
+ </mapper>

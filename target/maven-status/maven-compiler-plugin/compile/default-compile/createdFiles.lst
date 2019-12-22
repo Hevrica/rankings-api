@@ -1,0 +1,6 @@
+com\rankings\mapper\GameMapper.class
+com\rankings\controller\GameController.class
+com\rankings\service\GameServiceImpl.class
+com\rankings\service\GameService.class
+com\rankings\controller\HomeController.class
+com\rankings\domain\GameVO.class
