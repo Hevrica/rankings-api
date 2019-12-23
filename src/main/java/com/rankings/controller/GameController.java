@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rankings.domain.GameVO;
@@ -21,8 +20,17 @@ public class GameController {
 	@Autowired
 	private GameService gameService;
 	
-	@GetMapping(value = "/onlinegamelist", produces = "application/json; charset=UTF-8")
-	public List<GameVO> json() throws Exception {
-		return gameService.onlineGameList();
+	@GetMapping(value = "/onlinelist", produces = "application/json; charset=UTF-8")
+	public List<GameVO> getOnlineList() throws Exception {
+		List<GameVO> onlineList = gameService.getOnlineList();
+		log.info("getOnlineList : " + onlineList);
+		return onlineList;
+	}
+	
+	@GetMapping(value = "/mobilelist", produces = "application/json; charset=UTF-8")
+	public List<GameVO> getMobileList() throws Exception {
+		List<GameVO> mobileList = gameService.getMobileList();
+		log.info("getMobileList : " + mobileList);
+		return mobileList;
 	}
 }

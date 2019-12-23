@@ -23,7 +23,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
-public class ServerTests {
+public class GameTests {
 	
 	@Setter(onMethod_ = {@Autowired})
 	private DataSource dataSource;
@@ -45,7 +45,7 @@ public class ServerTests {
 	
 	@Test
 	public void test2() {
-		log.info(gameMapper.onlineGame(20));
+		log.info(gameMapper.readOnline(20));
 	}
 	
 	@Test
@@ -56,11 +56,11 @@ public class ServerTests {
 	
 	@Test
 	public void test4() {
-		log.info(gameService.onlineGame(21));
+		log.info(gameService.getOnline(21));
 	}
 	
 	@Test
 	public void test5() {
-		gameService.onlineGameList().forEach(gameVo -> log.info(gameVo));
+		gameService.getOnlineList().forEach(gameVo -> log.info(gameVo));
 	}
 }
