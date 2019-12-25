@@ -45,9 +45,9 @@
 	<insert id="create_boardComment">
 		<![CDATA[insert into board_comment(writer, pwd, content, user_id, board_id) values(#{writer}, #{pwd}, #{content}, #{user_id}, #{board_id})]]>
 	</insert>
-	<select id="read_boardComment" resultType="com.rankings.domain.BoardCommentVO">
+<!-- 	<select id="read_boardComment" resultType="com.rankings.domain.BoardCommentVO">
 		<![CDATA[select * from board_comment]]>
-	</select>
+	</select> -->
 	<update id="update_boardComment">
 		<![CDATA[update board_comment set writer = #{writer}, pwd = #{pwd}, content = #{content}, update_date = now() where id = #{id}]]>
 	</update>

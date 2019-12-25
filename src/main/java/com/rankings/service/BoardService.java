@@ -14,7 +14,7 @@ public interface BoardService {
 	
 	// Board_Comment Schema : 커뮤니티 게시판 댓글 CRUD
 	public boolean insertBoardComment(BoardCommentVO boardCommentVO);
-	public List<BoardCommentVO> getBoardCommentList();
+//	public List<BoardCommentVO> getBoardCommentList();
 	public boolean modifyBoardComment(BoardCommentVO boardCommentVO);
 	public boolean removeBoardComment(int id);
 }
