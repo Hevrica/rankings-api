@@ -9,8 +9,8 @@
 		<result property="title" column="title" />
 		<result property="content" column="content" />
 		<result property="image" column="image" />
-		<result property="create_date" column="create_date" />
-		<result property="update_date" column="update_date" />
+		<result property="create_at" column="create_at" />
+		<result property="update_at" column="update_at" />
 		<result property="user_id" column="user_id" />
 		<collection property="boardCommentVO" column="id" javaType="java.util.ArrayList" ofType="com.rankings.domain.BoardCommentVO" select="read_boardComment" />
 	</resultMap>
@@ -21,8 +21,8 @@
 		<result property="writer" column="writer" />
 		<result property="pwd" column="pwd" />
 		<result property="content" column="content" />
-		<result property="create_date" column="create_date" />
-		<result property="update_date" column="update_date" />
+		<result property="create_at" column="create_at" />
+		<result property="update_at" column="update_at" />
 		<result property="user_id" column="user_id" />
 		<result property="board_id" column="board_id" />		
 	</resultMap>
@@ -35,7 +35,7 @@
 		<![CDATA[select * from board]]>
 	</select>
 	<update id="update_board">
-		<![CDATA[update board set writer = #{writer}, pwd = #{pwd}, title = #{title}, content = #{content}, image = #{image}, update_date = now(), user_id = #{user_id} where id = #{id}]]>
+		<![CDATA[update board set writer = #{writer}, pwd = #{pwd}, title = #{title}, content = #{content}, image = #{image}, update_at = now(), user_id = #{user_id} where id = #{id}]]>
 	</update>
 	<delete id="delete_board">
 		<![CDATA[delete from board where id = #{id}]]>
@@ -49,7 +49,7 @@
 		<![CDATA[select * from board_comment]]>
 	</select>
 	<update id="update_boardComment">
-		<![CDATA[update board_comment set writer = #{writer}, pwd = #{pwd}, content = #{content}, update_date = now() where id = #{id}]]>
+		<![CDATA[update board_comment set writer = #{writer}, pwd = #{pwd}, content = #{content}, update_at = now() where id = #{id}]]>
 	</update>
 	<delete id="delete_boardComment">
 		<![CDATA[delete from board_comment where id = #{id}]]>

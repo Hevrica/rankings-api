@@ -3,6 +3,8 @@ package com.rankings.domain;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 
 @Data
@@ -13,8 +15,13 @@ public class BoardVO {
 	private String title;
 	private String content;
 	private String image;
-	private Date create_date;
-	private Date update_date;
+	
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private Date create_at;
+	
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private Date update_at;
+	
 	private int user_id;
 	private List<BoardCommentVO> boardCommentVO;
 }
