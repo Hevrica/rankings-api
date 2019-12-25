@@ -64,7 +64,7 @@ public class BoardController {
 	}
 
 	@ApiOperation(value="게시글 삭제 API", notes="특정 게시글을 삭제하는 API")
-	@DeleteMapping(value = "/remove/{board_id}", produces = { MediaType.TEXT_PLAIN_VALUE })
+	@DeleteMapping(value = "/remove/{id}", produces = { MediaType.TEXT_PLAIN_VALUE })
 	public ResponseEntity<String> removeBoard(@PathVariable("id") int id) throws Exception {
 		log.info("removeBoard : " + id);
 		return boardService.removeBoard(id) == true ? new ResponseEntity<>("removeBoard Success", HttpStatus.OK)
@@ -83,15 +83,8 @@ public class BoardController {
 				: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
-//	@ApiOperation(value="댓글 리스트 API", notes="모든 댓글을 가져오는 API")
-//	@GetMapping(value = "/listcomment", produces = "application/json; charset=UTF-8")
-//	public ResponseEntity<List<BoardCommentVO>> getBoardCommentList() throws Exception {
-//		log.info("getBoardCommentList");
-//		return new ResponseEntity<>(boardService.getBoardCommentList(), HttpStatus.OK);
-//	}
-
 	@ApiOperation(value="댓글 수정 API", notes="특정 댓글을 수정하는 API")
-	@PutMapping(value = "/modifycomment/{comment_id}", produces = { MediaType.APPLICATION_XML_VALUE,
+	@PutMapping(value = "/modifycomment/{id}", produces = { MediaType.APPLICATION_XML_VALUE,
 			MediaType.APPLICATION_JSON_UTF8_VALUE })
 	public ResponseEntity<String> modifyBoard(@PathVariable("id") int id, @RequestBody BoardCommentVO boardCommentVO)
 			throws Exception {
@@ -104,7 +97,7 @@ public class BoardController {
 	}
 
 	@ApiOperation(value="댓글 삭제 API", notes="특정 댓글을 삭제하는 API")
-	@DeleteMapping(value = "/removecomment/{comment_id}", produces = { MediaType.TEXT_PLAIN_VALUE })
+	@DeleteMapping(value = "/removecomment/{id}", produces = { MediaType.TEXT_PLAIN_VALUE })
 	public ResponseEntity<String> removeBoardComment(@PathVariable("id") int id) throws Exception {
 		log.info("removeBoardComment : " + id);
 		return boardService.removeBoardComment(id) == true
