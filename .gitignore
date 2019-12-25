@@ -25,6 +25,13 @@
 hs_err_pid*
 
 .gitignore
+
+# eclipse
+.settings
+.project
+.classpath
+target
+
 .idea/.gitignore
 .idea/.name
 .idea/artifacts/

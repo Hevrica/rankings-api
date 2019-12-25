@@ -2,17 +2,19 @@ package com.rankings.domain;
 
 import lombok.Data;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
 public class NoticeVO {
 
-    private Long notice_id;
-    private String notice_title;
-    private String notice_writer;
-    private String notice_content;
-    private String notice_image;
-    private Date notice_create_date;
-    private Date notice_update_date;
+    private Long id;
+    private String title;
+    private String writer;
+    private String content;
+    private String image;
+    private Date create_date;
+    private Date update_date;
 
 }

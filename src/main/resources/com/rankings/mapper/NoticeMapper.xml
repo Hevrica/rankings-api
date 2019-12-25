@@ -5,13 +5,13 @@
  		select * from notice order by create_date desc
  	</select>
     <insert id="postNotice">
-        insert into notice(notice_title, notice_content, notice_writer, notice_image, notice_create_date)
-        values (#{notice_title}, #{notice_content}, #{notice_writer}, #{notice_image}, now())
+        insert into notice(title, content, writer, image, create_date)
+        values (#{title}, #{content}, #{writer}, #{image}, now())
     </insert>
     <update id="updateNotice">
-        <![CDATA[update notice set notice_tite=#{ notice_title}, notice_content=#{notice_content}, notice_writer=#{notice_writer}, notice_image=#{notice_image}, update_date=now() where notice_id = #{notice_id} ]]>
+        <![CDATA[update notice set title=#{title}, content=#{content}, writer=#{writer}, image=#{image}, update_date=now() where id = #{id} ]]>
     </update>
     <delete id="deleteNotice">
-        <![CDATA[delete from notice where notice_id = #{notice_id}]]>
+        <![CDATA[delete from notice where id = #{id}]]>
     </delete>
 </mapper>
