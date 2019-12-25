@@ -14,10 +14,10 @@ public class BoardCommentVO {
 	private String content;
 	
 	@JsonFormat(pattern = "yyyy-MM-dd")
-	private Date create_at;
+	private Date created_at;
 	
 	@JsonFormat(pattern = "yyyy-MM-dd")
-	private Date update_at;
+	private Date updated_at;
 	
 	private int user_id;
 	private int board_id;
