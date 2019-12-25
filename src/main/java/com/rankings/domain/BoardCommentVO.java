@@ -6,12 +6,12 @@ import lombok.Data;
 
 @Data
 public class BoardCommentVO {
-	private int comment_id;
-	private String comment_writer;
-	private String comment_pwd;
-	private String comment_content;
-	private Date comment_create_date;
-	private Date comment_update_date;
+	private int id;
+	private String writer;
+	private String pwd;
+	private String content;
+	private Date create_date;
+	private Date update_date;
 	private int user_id;
 	private int board_id;
 }

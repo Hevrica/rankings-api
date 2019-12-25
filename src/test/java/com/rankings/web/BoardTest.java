@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.rankings.domain.BoardCommentVO;
-import com.rankings.domain.BoardVO;
 import com.rankings.mapper.BoardMapper;
 import com.rankings.service.BoardService;
 
@@ -42,10 +40,10 @@ public class BoardTest {
 //		}
 //	}
 //
-//	@Test
-//	public void boardTest_ReadList() {
-//		boardService.getBoardList().forEach(board -> log.info(board));
-//	}
+	@Test
+	public void boardTest_ReadList() {
+		boardService.getBoardList().forEach(board -> log.info(board));
+	}
 //
 //	@Test
 //	public void boardTest_Update() {
@@ -115,9 +113,4 @@ public class BoardTest {
 //			log.info("Delete Success");
 //		}
 //	}
-//
-	@Test
-	public void boardTest_ReadAllList() {
-		boardService.getAllList(2).forEach(board -> log.info(board));
-	}
 }

@@ -39,9 +39,9 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public boolean removeBoard(int board_id) {
-		log.info("removeBoard : " + board_id);
-		return boardMapper.delete_board(board_id);
+	public boolean removeBoard(int id) {
+		log.info("removeBoard : " + id);
+		return boardMapper.delete_board(id);
 	}
 
 	@Override
@@ -64,15 +64,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public boolean removeBoardComment(int Comment_id) {
-		log.info("removeBoardComment : " + Comment_id);
-		return boardMapper.delete_boardComment(Comment_id);
-	}
-
-	@Override
-	public List<BoardVO> getAllList(int board_id) {
-		List<BoardVO> boardAllList = boardMapper.read_all(board_id);
-		log.info("getAllList : " + boardAllList);
-		return boardAllList;
+	public boolean removeBoardComment(int id) {
+		log.info("removeBoardComment : " + id);
+		return boardMapper.delete_boardComment(id);
 	}
 }
