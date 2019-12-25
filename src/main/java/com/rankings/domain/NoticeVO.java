@@ -1,5 +1,7 @@
 package com.rankings.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import lombok.Data;
 
 import java.sql.Timestamp;
@@ -14,7 +16,11 @@ public class NoticeVO {
     private String writer;
     private String content;
     private String image;
-    private Date create_date;
-    private Date update_date;
+
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date created_at;
+
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date updated_at;
 
 }
