@@ -1,7 +1,5 @@
 package com.rankings.domain;
 
-import java.util.Date;
-
 import lombok.Data;
 
 @Data
@@ -14,7 +12,7 @@ public class GameVO {
 	private String genre;
 	private String division;
 	private int g_rank;
-	private Date g_month;
-	private Date g_week;
+	private String g_month;
+	private String g_week;
 	private String age;
 }
