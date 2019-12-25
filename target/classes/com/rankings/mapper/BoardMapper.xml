@@ -12,7 +12,7 @@
 		<result property="created_at" column="created_at" />
 		<result property="updated_at" column="updated_at" />
 		<result property="user_id" column="user_id" />
-		<collection property="boardCommentVO" column="id" javaType="java.util.ArrayList" ofType="com.rankings.domain.BoardCommentVO" select="read_boardComment" />
+		<collection property="comment" column="id" javaType="java.util.ArrayList" ofType="com.rankings.domain.BoardCommentVO" select="read_boardComment" />
 	</resultMap>
 
 	<!-- Board_CommentVO RequestMap -->
@@ -32,7 +32,7 @@
 		<![CDATA[insert into board(writer, pwd, title, content, image, user_id) values(#{writer}, #{pwd}, #{title}, #{content}, #{image}, #{user_id})]]>
 	</insert>
 	<select id="read_board" resultMap="board_map">
-		<![CDATA[select * from board]]>
+		<![CDATA[select * from board order by id desc]]>
 	</select>
 	<update id="update_board">
 		<![CDATA[update board set writer = #{writer}, pwd = #{pwd}, title = #{title}, content = #{content}, image = #{image}, updated_at = now(), user_id = #{user_id} where id = #{id}]]>
@@ -46,7 +46,7 @@
 		<![CDATA[insert into board_comment(writer, pwd, content, user_id, board_id) values(#{writer}, #{pwd}, #{content}, #{user_id}, #{board_id})]]>
 	</insert>
  	<select id="read_boardComment" resultType="com.rankings.domain.BoardCommentVO">
-		<![CDATA[select * from board_comment]]>
+		<![CDATA[select * from board_comment where board_id = #{board_id}]]>
 	</select>
 	<update id="update_boardComment">
 		<![CDATA[update board_comment set writer = #{writer}, pwd = #{pwd}, content = #{content}, updated_at = now() where id = #{id}]]>

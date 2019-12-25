@@ -23,5 +23,5 @@ public class BoardVO {
 	private Date updated_at;
 	
 	private int user_id;
-	private List<BoardCommentVO> boardCommentVO;
+	private List<BoardCommentVO> comment;
 }
