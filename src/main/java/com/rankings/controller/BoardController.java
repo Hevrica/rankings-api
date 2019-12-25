@@ -26,7 +26,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @RestController
 @RequestMapping("/board/*")
-@Api(value = "swag-rest-controller", description = "게시판 CRUD API ")
+@Api(value = "swag-rest-controller", description = "게시판 CRUD API")
 public class BoardController {
 	// 공부할 것 : ResponseEntity, @PathVariable, @RequestBody
 	@Autowired
@@ -45,7 +45,7 @@ public class BoardController {
 	}
 
 	@ApiOperation(value="게시글 리스트 API", notes="모든 게시글과 댓글을 가져오는 API")
-	@GetMapping(value = "/list", produces = { "application/json; charset=UTF-8" })
+	@GetMapping(value = "/list", produces = "application/json; charset=UTF-8")
 	public ResponseEntity<List<BoardVO>> getBoardList() throws Exception {
 		log.info("getBoardList");
 		return new ResponseEntity<>(boardService.getBoardList(), HttpStatus.OK);
@@ -84,7 +84,7 @@ public class BoardController {
 	}
 
 //	@ApiOperation(value="댓글 리스트 API", notes="모든 댓글을 가져오는 API")
-//	@GetMapping(value = "/listcomment", produces = { "application/json; charset=UTF-8" })
+//	@GetMapping(value = "/listcomment", produces = "application/json; charset=UTF-8")
 //	public ResponseEntity<List<BoardCommentVO>> getBoardCommentList() throws Exception {
 //		log.info("getBoardCommentList");
 //		return new ResponseEntity<>(boardService.getBoardCommentList(), HttpStatus.OK);

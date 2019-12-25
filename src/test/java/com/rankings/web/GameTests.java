@@ -1,10 +1,5 @@
 package com.rankings.web;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
-
-import java.sql.Connection;
-
 import javax.sql.DataSource;
 
 import org.junit.Test;
@@ -34,32 +29,7 @@ public class GameTests {
 	private GameService gameService;
 	
 	@Test
-	public void test1() {
-		try(Connection con= dataSource.getConnection()){
-			log.info("connection test : " + con);
-		}catch(Exception e) {
-			fail((e.getMessage()));
-		}
-	}
-	
-	@Test
-	public void test2() {
-		log.info(gameMapper.readOnline(20));
-	}
-	
-	@Test
-	public void test3() {
-		log.info(gameService);
-		assertNotNull(gameService);
-	}
-	
-	@Test
-	public void test4() {
-		log.info(gameService.getOnline(21));
-	}
-	
-	@Test
-	public void test5() {
-		gameService.getOnlineList().forEach(gameVo -> log.info(gameVo));
+	public void test() {
+		gameService.getOnlineList().forEach(game -> log.info(game));
 	}
 }

@@ -17,30 +17,24 @@ public class GameServiceImpl implements GameService {
 
 	@Setter(onMethod_ = @Autowired)
 	private GameMapper gameMapper;
-	
-	@Override
-	public GameVO getOnline(int game_id) {
-		log.info("getOnline : " + game_id);
-		return gameMapper.readOnline(game_id);
-	}
-	
+
 	@Override
 	public List<GameVO> getOnlineList() {
-		List<GameVO> onlineList = gameMapper.readOnlineList();
+		List<GameVO> onlineList = gameMapper.read_onlineList();
 		log.info("getOnlineList : " +onlineList);
 		return onlineList;
 	}
 	
 	@Override
 	public List<GameVO> getMobileList() {
-		List<GameVO> mobileList = gameMapper.readOnlineList();
+		List<GameVO> mobileList = gameMapper.read_mobileList();
 		log.info("getMobileList : " + mobileList);
 		return mobileList;
 	}
 	
 //	@Override
 //	public List<GameVO> getGenreList() {
-//		List<GameVO> genreList = gameMapper.readGenreList();
+//		List<GameVO> genreList = gameMapper.read_GenreList();
 //		log.info("getGenreList : " + genreList);
 //		return genreList;
 //	}

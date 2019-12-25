@@ -6,14 +6,15 @@ import lombok.Data;
 
 @Data
 public class GameVO {
-	private int game_id;
-	private String game_name;
-	private String game_link;
-	private String game_company;
-	private String game_image;
-	private String game_genre;
-	private String game_division;
-	private int game_rank;
-	private Date game_week;
-	private String game_age;
+	private int id;
+	private String name;
+	private String link;
+	private String company;
+	private String image;
+	private String genre;
+	private String division;
+	private int g_rank;
+	private Date g_month;
+	private Date g_week;
+	private String age;
 }
