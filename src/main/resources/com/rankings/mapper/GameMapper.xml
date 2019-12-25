@@ -2,12 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.rankings.mapper.GameMapper">
 	<select id="read_onlineList" resultType="com.rankings.domain.GameVO">
-		<![CDATA[select * from game where division = 'online' order by g_rank]]>
+		<![CDATA[select * from game where division = 'online' and g_month = #{g_month} order by g_rank]]>
 	</select>
 	<select id="read_mobileList" resultType="com.rankings.domain.GameVO">
-		<![CDATA[select * from game where division = 'mobile' order by g_rank]]>
+		<![CDATA[select * from game where division = 'mobile' and g_week = #{g_week}  order by g_rank]]>
 	</select>
-<!--  	<select id="read_genreList" resultType="com.rankings.domain.GameVO">
- 		<![CDATA[select * from game where game_division = 'genre' order by game_rank]]>
- 	</select> -->
 </mapper>
