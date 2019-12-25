@@ -50,13 +50,6 @@ public class BoardServiceImpl implements BoardService {
 		return boardMapper.create_boardComment(boardCommentVO);
 	}
 
-//	@Override
-//	public List<BoardCommentVO> getBoardCommentList() {
-//		List<BoardCommentVO> boardCommentList = boardMapper.read_boardComment();
-//		log.info("getBoardCommentList : " + boardCommentList);
-//		return boardCommentList;
-//	}
-
 	@Override
 	public boolean modifyBoardComment(BoardCommentVO boardCommentVO) {
 		log.info("modyfiBoardComment : " + boardCommentVO);

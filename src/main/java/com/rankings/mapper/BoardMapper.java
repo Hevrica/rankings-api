@@ -14,7 +14,6 @@ public interface BoardMapper {
 	
 	// Board_Comment Schema : 커뮤니티 게시판 댓글 CRUD
 	public boolean create_boardComment(BoardCommentVO boardCommentVO);
-//	public List<BoardCommentVO> read_boardComment();
 	public boolean update_boardComment(BoardCommentVO boardCommentVO);
 	public boolean delete_boardComment(int id);
 }
